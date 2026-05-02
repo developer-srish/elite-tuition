@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+  <head>
+    
+    <title>Elite Tuition</title>
+    <style>
+      header{
+        background:linear-gradient(to right,#0C3059,#0B8D75);
+        color: white;
+        text-align: center;
+        align-content: center;
+        height: 500px;
+      }
+          .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .text {
+      width: 50%;
+    }
+
+    .image {
+      width: 50%;
+      text-align: right;
+    }
+
+    .image img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .card{
+      box-shadow: 0 4px 8px;
+      border:2px solid #2563EA;
+      text-align:center ;
+      padding: 20px;
+      border-radius: 30px;
+      margin-top: 20px;
+    }
+    .iii img{
+      display: block;
+      margin-right: auto;
+      width: 70px;
+    }
+    #menu-toggle {
+  display: none;
+}
+
+/* Navbar top */
+.navbar {
+  background: transparent;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  font-size: 25px;
+  cursor: pointer;
+  color:black;
+}
+
+/* Side menu */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: black;
+  color: white;
+  padding-top: 60px;
+  transition: 0.3s;
+}
+
+/* Menu links */
+.menu a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: orange;
+}
+
+/* Show menu when checked */
+#menu-toggle:checked ~ .menu {
+  left: 0;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Pages */
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page:target {
+  display: block;
+}
+
+body:not(:has(:target)) #home {
+  display: block;
+}
+.p{
+  line-height: 2.0;
+  letter-spacing: 2px;
+}
+.nc{
+  text-align: center;
+  padding:10px ;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-top: 30px;
+}
+.sir{
+  width: 200px;
+  border-radius:30px;
+  
+  
+    
+    
+
+}
+.siri{
+  width: 200px;
+  border-radius: 30px;
+  
+}
+.new{
+  background:#f0f4ff;
+  padding:30px;
+  
+}
+.footer {
+  background: linear-gradient(to right, #0C3059, #1f4f8b);
+  color: white;
+  padding: 40px 20px;
+}
+
+/* Layout */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Columns */
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Links */
+.footer-col a {
+  display: block;
+  color: #F09A3E;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom text */
+.copy {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+.whatsapp, .call {
+      position: fixed;
+      bottom: 20px;
+      
+      padding: 12px;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+.whatsapp {
+      right: 15px;
+      background: #25D366;
+    }
+
+    .call {
+    right: 60px;
+    background: #007BFF;
+    }
+    .door-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* Sits on top of everything */
+  perspective: 2000px;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none; /* Allows clicking through the wrapper when open */
+}
+
+.door-wrapper.active {
+  pointer-events: all;
+}
+
+/* The Doors */
+.door {
+  position: absolute;
+  top: 0;
+  width: 50.5%; /* Slight overlap to prevent a gap in the middle */
+  height: 100%;
+  background: linear-gradient(135deg, #0C3059, #0B8D75);
+  transition: transform 1.5s cubic-bezier(0.7, 0, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.left-door {
+  left: 0;
+  transform-origin: left;
+  border-right: 2px solid #F09A3E;
+}
+
+.right-door {
+  right: 0;
+  transform-origin: right;
+  border-left: 2px solid #F09A3E;
+}
+
+/* Door Text Styling */
+.door-title {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Opening Animation */
+.door-wrapper.open .left-door {
+  transform: rotateY(-110deg);
+}
+
+.door-wrapper.open .right-door {
+  transform: rotateY(110deg);
+}
+
+/* Hide the wrapper entirely after animation so user can interact with site */
+.door-wrapper.hidden {
+  display: none;
+}
+.alli{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+    </style>
+  </head>
+  <body>
+    <button onclick="toggleMusic()" id="musicBtn" style="
+  background: #0C3059;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+">🔇 Music</button>
+        <input type="checkbox" id="menu-toggle">
+        <audio id="bgMusic" autoplay loop>
+  <source src="https://mp3tourl.com/audio/1777635853205-005a4e06-6300-490a-8c7b-559a18c209b0.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Navbar -->
+<div class="navbar">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+</div>
+    <img style="width:1000px;" src="https://i.postimg.cc/6QWtpZSM/1777631358658.png">
+    <input type="checkbox" id="menu-toggle">
+
+<!-- Side Menu -->
+<div class="menu">
+  <label for="menu-toggle" class="close">✖</label>
+
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  
+</div>
+
+<!-- Pages -->
+
+<div id="door-reveal" class="door-wrapper active" onclick="openDoors()">
+  <div class="door left-door">
+    <div class="door-title" style="text-align: right; width: 100%;">Elite</div>
+  </div>
+  <div class="door right-door">
+    <div class="door-title" style="text-align: left; width: 100%;">Tuition™</div>
+  </div>
+</div>
+
+
+<div  id="about" class="page">
+  <h4 style="color:#0B8D75;text-align:center;">Who we are</h4>
+  <h1 style="color:#0C3059;text-align:center;">About Elite Tuition™</h1>
+  <p style="color:#5a6a80;">We are dedicated to shaping young minds with quality education, expert guidance, and a passion for learning</p>
+  <br>
+  <br>
+  <div class="alli">
+  <img class="sir" src="https://i.postimg.cc/ZKGQ20WY/20260403-131031(1).jpg">
+  <img class="siri" src="https://i.postimg.cc/jjfy8jyN/20260502-115953(1).jpg">
+  </div>
+  
+  <h1 style="color:#0C3059;">Our Story</h1>
+  <p class="p" style="color:#5a6a80;">Elite Tuition was founded with a simple mission - to give every student the individual attention they deserve. Our experienced teachers go beyond textbooks to build real understanding, confidence, and a love for learning.
+  <br>
+  <br>
+
+From Nursery to Class 12, we offer structured programs that adapt to each child's pace, ensuring no student is left behind.</p>
+<div class="card">
+<h1 style="color:#0B8D75;">500+</h1>
+  <p style="color:#5a6a80;">Students Taught</p>
+  </div>
+  <div class="card">
+  <h1 style="color:#0B8D75;">98%</h1>
+  <p style="color:#5a6a80;">Success Rate</p>
+  </div>
+  <div class="nc">
+    <h1>🎯</h1>
+    <h3>Our Mission</h3>
+    <p>To empower students with knowledge, skills, and confidence to excel in academics and life.</p>
+    
+  </div>
+  <div class="nc">
+    <h1>👁</h1>
+    <h3>Our Vision</h3>
+    <p>To be the most trusted tuition centre where every child reaches their full potential</p>
+  </div>
+  <div class="nc">
+    <h1>💡</h1>
+    <h3>Our Approach</h3>
+    <p>Activity-based, personalised learning that makes concepts easy, fun, and long-lasting.</p>
+  </div>
+</div>
+
+<div id="contact" class="page">
+  <h1 style="color:#0C3059;"> 📞Contact Us</h1>
+  <p style="color:#5a6a80;">Get in touch with us to enroll or ask any questions</p>
+  <div class="new">
+    <h1> Get in Touch</h1>
+    <p>Phone:+91 8509128260</p>
+    <p>Location:Malda,West Bengal</p>
+  </div>
+  
+</div>
+
+
+<div id="home" class="page">
+  
+
+    <header>
+      <div class="hero">
+      <div class="text">
+      <h1>Best Tuition Classes for Students</h1>
+    <h2>Learn from expert teachers and boost your marks</h2>
+    </div>
+    <div class="image">
+      <img src="https://i.postimg.cc/PxKw12xR/Screenshot-20260430-202321-Google(1).jpg">
+      
+    </div>
+    </div>
+    </header>
+    <h1 style="text-align:center;">Our Specialized Wings</h1>
+    <p style="text-align:center;">Tailored curriculum for every stage of education.</p>
+    <div class="card">
+      <div class="iii">
+        <img src="https://i.postimg.cc/Kv6jR7Wb/Screenshot-20260501-091332-Acode(1).jpg">
+      </div>
+      <h1>Foundation Wing</h1>
+      <p>Nursery to Class 5. Focusing
+
+on building a strong foundation in language and logic.</p>
+<p> ✅ Activity Based Learning</p>
+<p> ✅Mental Math Practice</p>
+<p>✅ Hand-writing Excellence</p>
+    </div>
+    <div class="card">
+      <div class="iii">
+        <img src="https://i.postimg.cc/FRwz3jKK/Screenshot-20260501-091938-Acode(1).jpg">
+      </div>
+      <h1>Secondary Wing</h1>
+      <p>Class 6 to Class 10. Comprehensive preparation for school and board examinations.</p>
+      <p> ✅  Core Science & Maths</p>
+    <p> ✅  Weekly Assessment Tests</p>
+    <p>✅  Concept Revision Notes</p>
+    </div>
+    <div class="card">
+      <div class="iii">
+        <img src="https://i.postimg.cc/htGn4XSr/Screenshot-20260501-092459-Acode(1).jpg">
+      </div>
+      <h1>Senior Wing</h1>
+      <p>Class 11& 12. Specialized streams for Science, Commerce, and Arts students.</p>
+      <p>✅  Advanced Stream Coaching</p>
+      <p>✅  Competitive Exam Prep</p>
+    <p>✅  Career Guidance Support</p>
+    
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Left -->
+    <div class="footer-col">
+      <h2>Elite Tuition™</h2>
+      <p> The best academy you can find </p>
+    </div>
+
+    <!-- Middle -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  
+  
+    </div>
+
+    <!-- Right -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>📍 Malda, West Bengal</p>
+      <p>📞 +91 8509128260</p>
+      <p>📞 +91 9563187523(Science Sir)</p>
+      
+      
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 Elite Tuition™ . All Rights Reserved</p>
+</footer>
+<a href="https://wa.me/+918509128260" class="whatsapp">💬</a>
+<a href="tel:+918509128260" class="call">📞</a>
+<script>
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.2;
+  let playing = false;
+
+  function toggleMusic() {
+    const btn = document.getElementById("musicBtn");
+    if (playing) {
+      music.pause();
+      btn.textContent = "🔇 Music";
+      playing = false;
+    } else {
+      music.play();
+      btn.textContent = "🔊 Music";
+      playing = true;
+    }
+  }
+
+  function openDoors() {
+    const wrapper = document.getElementById('door-reveal');
+    wrapper.classList.add('open');
+    setTimeout(() => {
+      wrapper.classList.add('hidden');
+    }, 1600);
+  }
+</script>
+  </body>
+</html>
